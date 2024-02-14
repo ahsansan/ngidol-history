@@ -75,7 +75,7 @@ export default function HistoryTheater() {
         <main>
         {/* Winrate */}
         <h2 className="mb-5 mt-10 text-[#ff005f] uppercase font-bold text-xl text-center underline">Data Winrate Theater</h2>
-            <div className="w-full text-sm text-left rtl:text-right text-[#333333]">
+            <div className="w-full text-sm text-left rtl:text-right text-[#333333] overflow-x-auto">
                 <table className="table-auto w-full">
                     <thead className="text-xs text-[#ff005f] uppercase bg-[#fdd9e8]">
                     <tr>
@@ -103,12 +103,12 @@ export default function HistoryTheater() {
                 <div className="bg-white px-6 py-4 border border-[#fdd9e8] mb-1">
                     <p>Total Apply: <span className="font-bold ml-1">{totalAppearances}</span></p>
                     <p>Total Kemenangan: <span className="font-bold ml-1">{totalWins}</span></p>
-                    <p>Presentase Kemenangan Keseluruhan: <span className="font-bold ml-1">{totalWinPercentage}%</span></p>
+                    <p>Winrate Keseluruhan: <span className="font-bold ml-1">{totalWinPercentage}%</span></p>
                 </div>
             </div>
             {/* Sejarah Kedatangan */}
             <h2 className="mb-5 mt-10 text-[#ff005f] uppercase font-bold text-xl text-center underline">Sejarah Kedatangan Theater</h2>
-            <div className="w-full text-sm text-left rtl:text-right text-[#333333]">
+            <div className="w-full text-sm text-left rtl:text-right text-[#333333] overflow-x-auto">
                 <table className="table-auto w-full">
                     <thead className="text-xs text-[#ff005f] uppercase bg-[#fdd9e8]">
                     <tr>
@@ -119,7 +119,7 @@ export default function HistoryTheater() {
                     <tbody>
                         {kedatangan.map((data, index) => (
                             <tr className="bg-white" key={index}>
-                                <td className="px-6 py-4 border border-[#fdd9e8]">{data.setlist} - {data.remark ? <span className="text-[#ff005f]">{data.remark}</span> : ""}</td>
+                                <td className="px-6 py-4 border border-[#fdd9e8]">{data.setlist} {data.remark ? <span>{" "} - <span className="text-[#ff005f]">{data.remark}</span></span> : ""}</td>
                                 <td className="px-6 py-4 border border-[#fdd9e8]">{getDate(data.tanggal)}</td>
                             </tr>
                         ))}
@@ -128,7 +128,7 @@ export default function HistoryTheater() {
             </div>
             {/* Sejarah Semua Apply */}
             <h2 className="mb-5 mt-10 text-[#ff005f] uppercase font-bold text-xl text-center underline">Sejarah Apply Theater All Time</h2>
-            <div className="w-full text-sm text-left rtl:text-right text-[#333333]">
+            <div className="w-full text-sm text-left rtl:text-right text-[#333333] overflow-x-auto">
                 <table className="table-auto w-full">
                     <thead className="text-xs text-[#ff005f] uppercase bg-[#fdd9e8]">
                     <tr>

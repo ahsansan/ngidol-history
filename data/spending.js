@@ -3,7 +3,7 @@ export function getStreaming() {
         {
             name: "11th Anniversary Theater",
             tanggal: new Date("2023-09-07T00:15:00+07:00"),
-            remark: "",
+            remark: "I Love JKT48 Theater",
             via: "Patungan sama taufik",
             harga: 30000
         },

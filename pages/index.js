@@ -26,18 +26,18 @@ export default function Home() {
     </Head>
     <Layout>
       <main>
-        <div className="flex flex-row flex-wrap mt-10 px-3">
+        <div className="flex flex-col md:flex-row flex-wrap mt-10 px-3">
           <div>
             <Image src="/lulu_salsabila.webp" width={180} height={254}/>
           </div>
-          <div className="ml-16">
+          <div className="md:ml-16 mt-3">
             <h2 className="font-bold">Oshimen</h2>
             <p className="text-[#ff005f]">Lulu Salsabila</p>
             <h2 className="font-bold mt-3">OFC Expired Pada</h2>
             <p className="text-[#ff005f]">22 Oktober 2024</p>
             <h2 className="font-bold mt-3">Jumlah Keatangan Theater</h2>
             <p className="text-[#ff005f]">{jumlahKedatangan} Kali</p>
-            <br className="mt-3"/>
+            <br className="mt-2"/>
             <Link href="https://jkt48.com/theater/schedule?lang=id"><button className="bg-[#CD0C0D] text-white px-5 py-3 font-bold rounded hover:underline hover:bg-red-700">Cek Schedule</button></Link>
           </div>
         </div>

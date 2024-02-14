@@ -47,9 +47,13 @@ export default function HistorySpending() {
             </Head>
             <Layout>
                 <main>
-                    <h2 className="mb-5 mt-10 text-[#ff005f] uppercase font-bold text-xl text-center underline">Total Spending All Time</h2>
-                        <div className="w-full text-sm text-left rtl:text-right text-[#333333]">
+                    <div className="w-full text-sm text-left rtl:text-right text-[#333333] mt-5">
                         <table className="table-auto w-full">
+                        <thead className="text-xs text-[#ff005f] uppercase bg-[#fdd9e8]">
+                            <tr>
+                                <th scope="col" className="px-6 py-3">Total Spending All Time</th>
+                            </tr>
+                            </thead>
                             <tbody>
                                 <tr className="bg-white">
                                     <td className="px-6 py-4 border border-[#fdd9e8]"><span className="text-[#ff005f] text-xl font-bold">{convertToRupiah(totalSpending)}</span></td>
@@ -58,7 +62,7 @@ export default function HistorySpending() {
                         </table>
                     </div>
                     <h2 className="mb-5 mt-10 text-[#ff005f] uppercase font-bold text-xl text-center underline">History Kedatangan Konser</h2>
-                        <div className="w-full text-sm text-left rtl:text-right text-[#333333]">
+                        <div className="w-full text-sm text-left rtl:text-right text-[#333333] overflow-x-auto">
                         <table className="table-auto w-full">
                             <thead className="text-xs text-[#ff005f] uppercase bg-[#fdd9e8]">
                             <tr>
@@ -81,7 +85,7 @@ export default function HistorySpending() {
                         </table>
                     </div>
                     <h2 className="mb-5 mt-10 text-[#ff005f] uppercase font-bold text-xl text-center underline">History Pembelian Live Streaming</h2>
-                        <div className="w-full text-sm text-left rtl:text-right text-[#333333]">
+                        <div className="w-full text-sm text-left rtl:text-right text-[#333333] overflow-x-auto">
                         <table className="table-auto w-full">
                             <thead className="text-xs text-[#ff005f] uppercase bg-[#fdd9e8]">
                             <tr>
@@ -104,7 +108,7 @@ export default function HistorySpending() {
                         </table>
                     </div>
                     <h2 className="mb-5 mt-10 text-[#ff005f] uppercase font-bold text-xl text-center underline">History Top Up JKT48 Point</h2>
-                        <div className="w-full text-sm text-left rtl:text-right text-[#333333]">
+                        <div className="w-full text-sm text-left rtl:text-right text-[#333333] overflow-x-auto">
                         <table className="table-auto w-full">
                             <thead className="text-xs text-[#ff005f] uppercase bg-[#fdd9e8]">
                             <tr>
@@ -125,7 +129,7 @@ export default function HistorySpending() {
                         </table>
                     </div>
                     <h2 className="mb-5 mt-10 text-[#ff005f] uppercase font-bold text-xl text-center underline">History OFC (Offical Fans Club)</h2>
-                        <div className="w-full text-sm text-left rtl:text-right text-[#333333]">
+                        <div className="w-full text-sm text-left rtl:text-right text-[#333333] overflow-x-auto">
                         <table className="table-auto w-full">
                             <thead className="text-xs text-[#ff005f] uppercase bg-[#fdd9e8]">
                             <tr>
