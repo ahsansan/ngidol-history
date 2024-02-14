@@ -1,0 +1,167 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+}
+
+@layer utilities {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+border: 4px solid #f3f3f3;
+border-top: 4px solid #ffa500;
+border-radius: 50%;
+width: 32px;
+height: 32px;
+animation: spin 1s linear infinite;
+}
+
+/* VerticalCarousel.css */
+.vertical-carousel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.carousel-container {
+  position: relative;
+  height: 400px;
+  width: 500px;
+}
+
+.carousel-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  position: absolute;
+  transition: opacity 0.5s;
+}
+
+.carousel-item img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.carousel-item.active {
+  opacity: 1;
+}
+
+.carousel-container button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #fb923c;
+  font-size: 44px;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.prev-button {
+  left: 1px;
+}
+
+.next-button {
+  right: 1px;
+}
+
+.dots {
+  display: flex;
+  margin-top: 10px;
+}
+
+.dot {
+  height: 8px;
+  width: 8px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #fb923c;
+}
+
+@media only screen and (max-width: 450px) {
+  .carousel-container {
+    height: 350px;
+    width: 450px;
+  }
+  .prev-button {
+    left: 25px;
+  }
+  
+  .next-button {
+    right: 25px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .carousel-container {
+    height: 300px;
+    width: 400px;
+  }
+  .prev-button {
+    left: 25px;
+  }
+  
+  .next-button {
+    right: 25px;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .carousel-container {
+    height: 200px;
+    width: 300px;
+  }
+  .prev-button {
+    left: 25px;
+  }
+  
+  .next-button {
+    right: 25px;
+  }
+}
