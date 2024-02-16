@@ -35,7 +35,7 @@ export default function Home() {
     </Head>
     <Layout>
       <main>
-        <div className="flex flex-col md:flex-row flex-wrap mt-10 px-3">
+        <div className="flex flex-col md:flex-row items-center flex-wrap mt-10 px-3">
           <div>
             <Image src="/lulu_salsabila.webp" width={180} height={254}/>
           </div>

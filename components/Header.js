@@ -3,14 +3,19 @@ import Link from "next/link";
 const Header = () => {
     const menuHead = [
         {
+            name: "Home",
+            url: "/",
+            index: 1
+        },
+        {
             name: "History Theater",
             url: "/history-theater",
-            index: 1
+            index: 2
         },
         {
             name: "History Spending",
             url: "/history-spending",
-            index: 2
+            index: 3
         },
     ]
     return(
@@ -22,7 +27,7 @@ const Header = () => {
             <nav>
                 <ul className="bg-[#CD0C0D] flex flex-col md:flex-row flex-wrap justify-center items-center">
                     {menuHead.map((menu) => (
-                        <Link href={menu.url} key={menu.url}><a><li className="px-3 py-5 border border-white uppercase text-white text-sm font-bold hover:underline" key={menu.index}>{menu.name}</li></a></Link>
+                        <Link href={menu.url} key={menu.index}><a><li className="w-[170px] py-5 text-center border-y md:border border-white uppercase text-white text-sm font-bold hover:underline" key={menu.index}>{menu.name}</li></a></Link>
                     ))}
                 </ul>
             </nav>

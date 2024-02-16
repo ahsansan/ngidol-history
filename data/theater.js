@@ -3,17 +3,24 @@ export function getHistoryTheater() {
     // Tipe 1 OFC 2 GEN
     const dataHistory = [
         {
-            setlist: getSetlist("SNM"),
-            tanggal: new Date("2024-02-17T00:15:00+07:00"),
-            tanggala: new Date("2024-02-15T00:15:00+07:00"),
+            setlist: getSetlist("RNN"),
+            tanggal: new Date("2024-02-18T00:15:00+07:00"),
+            tanggala: new Date("2024-02-12T00:15:00+07:00"),
             hasil: 3,
             tipe: 1
         },
         {
             setlist: getSetlist("RNN"),
             tanggal: new Date("2024-02-18T00:15:00+07:00"),
-            tanggala: new Date("2024-02-12T00:15:00+07:00"),
+            tanggala: new Date("2024-02-16T00:15:00+07:00"),
             hasil: 1,
+            tipe: 2
+        },
+        {
+            setlist: getSetlist("SNM"),
+            tanggal: new Date("2024-02-17T00:15:00+07:00"),
+            tanggala: new Date("2024-02-15T00:15:00+07:00"),
+            hasil: 3,
             tipe: 1
         },
         {
