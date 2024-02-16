@@ -3,18 +3,27 @@ import Link from "next/link";
 import Layout from "../components/Layout";
 import Image from "next/image";
 import { getHistoryTheater } from "../data/theater";
+import { getOFC } from "../data/spending";
+import { getDate } from "../utils/date";
 import { useState, useEffect } from "react";
 
 export default function Home() {
   const [jumlahKedatangan, setJumlahKedatangan] = useState(0);
+  const [ofcExp, setOfcExp] = useState("");
 
   useEffect(() => {
     const data = getHistoryTheater()
+    const ofc = getOFC()
+    
+    const ofcOrdered = [...ofc].sort((a, b) => b.expired - a.expired);
+    const lastOfc = ofcOrdered[0].expired;
+
     const count = data.reduce((acc, item) => {
       return item.hasil === 2 ? acc + 1 : acc;
     }, 0);
     
     setJumlahKedatangan(count);
+    setOfcExp(lastOfc);
   }, []);
   return (
     <>
@@ -34,7 +43,7 @@ export default function Home() {
             <h2 className="font-bold">Oshimen</h2>
             <p className="text-[#ff005f]">Lulu Salsabila</p>
             <h2 className="font-bold mt-3">OFC Expired Pada</h2>
-            <p className="text-[#ff005f]">22 Oktober 2024</p>
+            <p className="text-[#ff005f]">{getDate(ofcExp)}</p>
             <h2 className="font-bold mt-3">Jumlah Keatangan Theater</h2>
             <p className="text-[#ff005f]">{jumlahKedatangan} Kali</p>
             <br className="mt-2"/>

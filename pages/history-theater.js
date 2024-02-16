@@ -18,12 +18,10 @@ export default function HistoryTheater() {
         const dataHistoryOrder = [...data].sort((a, b) => b.tanggala - a.tanggala);
         setSetlist(dataHistoryOrder)
 
-        // Objek untuk menyimpan jumlah penampilan dan kemenangan setiap setlist
         const setlistStats = {};
         let totalAppearancesCount = 0;
         let totalWinsCount = 0;
 
-        // Menghitung total penampilan dan kemenangan untuk setiap setlist
         data.forEach(item => {
         if (!setlistStats[item.setlist]) {
             setlistStats[item.setlist] = { appearances: 0, wins: 0 };
@@ -38,7 +36,6 @@ export default function HistoryTheater() {
         }
         });
 
-        // Menghitung presentase kemenangan untuk setiap setlist
         const setlistData = Object.keys(setlistStats).map(setlist => ({
         setlist,
         appearances: setlistStats[setlist].appearances,
@@ -46,7 +43,6 @@ export default function HistoryTheater() {
         winPercentage: ((setlistStats[setlist].wins / setlistStats[setlist].appearances) * 100).toFixed(2)
         }));
 
-        // Menghitung total presentase kemenangan
         const totalWinPercentageValue = ((totalWinsCount / totalAppearancesCount) * 100).toFixed(2);
 
         setSetlistData(setlistData);

@@ -3,6 +3,20 @@ export function getHistoryTheater() {
     // Tipe 1 OFC 2 GEN
     const dataHistory = [
         {
+            setlist: getSetlist("SNM"),
+            tanggal: new Date("2024-02-17T00:15:00+07:00"),
+            tanggala: new Date("2024-02-15T00:15:00+07:00"),
+            hasil: 3,
+            tipe: 1
+        },
+        {
+            setlist: getSetlist("RNN"),
+            tanggal: new Date("2024-02-18T00:15:00+07:00"),
+            tanggala: new Date("2024-02-12T00:15:00+07:00"),
+            hasil: 1,
+            tipe: 1
+        },
+        {
             setlist: getSetlist("RKJ"),
             tanggal: new Date("2023-10-27T00:15:00+07:00"),
             tanggala: new Date("2023-10-23T00:15:00+07:00"),
@@ -185,13 +199,6 @@ export function getHistoryTheater() {
             hasil: 2,
             tipe: 1,
             remark: "Last Show Adzana Shaliha"
-        },
-        {
-            setlist: getSetlist("RNN"),
-            tanggal: new Date("2024-02-18T00:15:00+07:00"),
-            tanggala: new Date("2024-02-12T00:15:00+07:00"),
-            hasil: 1,
-            tipe: 1
         },
     ]
 

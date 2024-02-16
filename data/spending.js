@@ -42,6 +42,13 @@ export function getStreaming() {
             via: "Showroom bot sharing",
             harga: 16000
         },
+        {
+            name: getSetlist("SNM"),
+            tanggal: new Date("2024-02-17T00:15:00+07:00"),
+            remark: "STS Freya",
+            via: "Showroom bot sharing",
+            harga: 16000
+        },
     ]
 
     return data;
@@ -77,17 +84,26 @@ export function getJKT48Point() {
         {
             tanggal: new Date("2023-10-22T00:15:00+07:00"),
             jumlahPoint: 200000,
-            harga: 205205
+            harga: 205205,
+            status: 2
         },
         {
             tanggal: new Date("2024-01-01T00:15:00+07:00"),
             jumlahPoint: 200000,
-            harga: 205205
+            harga: 205205,
+            status: 2
         },
         {
             tanggal: new Date("2024-02-10T00:15:00+07:00"),
             jumlahPoint: 200000,
-            harga: 204400
+            harga: 204400,
+            status: 1
+        },
+        {
+            tanggal: new Date("2024-02-15T00:15:00+07:00"),
+            jumlahPoint: 200000,
+            harga: 204400,
+            status: 1
         },
     ]
 

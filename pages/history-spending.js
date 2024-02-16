@@ -121,7 +121,7 @@ export default function HistorySpending() {
                                 {point.map((data, index) => (
                                     <tr className="bg-white" key={index}>
                                         <td className="px-6 py-4 border border-[#fdd9e8]">{getDate(data.tanggal)}</td>
-                                        <td className="px-6 py-4 border border-[#fdd9e8] text-[#ff005f]">{convertToPoint(data.jumlahPoint)}</td>
+                                        <td className="px-6 py-4 border border-[#fdd9e8] font-bold text-[#ff005f]">{convertToPoint(data.jumlahPoint)}  {data.status === 2 ? <span className="text-red-500 italic font-normal">(Telah Digunakan)</span> : <span className="text-green-500 italic font-normal">(Bisa Digunakan)</span>}</td>
                                         <td className="px-6 py-4 border border-[#fdd9e8]">{convertToRupiah(data.harga)}</td>
                                     </tr>
                                 ))}

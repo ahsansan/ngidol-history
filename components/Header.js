@@ -20,9 +20,9 @@ const Header = () => {
                 <p className="italic text-sm">Namanya juga gabut, iseng aja bikin ginian buat keperluan pencatatan pribadi.</p>
             </header>
             <nav>
-                <ul className="px-3 py-7 bg-[#CD0C0D] flex flex-col md:flex-row flex-wrap justify-center items-center">
+                <ul className="bg-[#CD0C0D] flex flex-col md:flex-row flex-wrap justify-center items-center">
                     {menuHead.map((menu) => (
-                        <Link href={menu.url} key={menu.url}><a><li className="mx-3 my-3 uppercase text-white font-bold hover:underline" key={menu.index}>{menu.name}</li></a></Link>
+                        <Link href={menu.url} key={menu.url}><a><li className="px-3 py-5 border border-white uppercase text-white text-sm font-bold hover:underline" key={menu.index}>{menu.name}</li></a></Link>
                     ))}
                 </ul>
             </nav>
