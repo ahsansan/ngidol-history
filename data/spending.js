@@ -49,6 +49,13 @@ export function getStreaming() {
             via: "Showroom bot sharing",
             harga: 16000
         },
+        {
+            name: getSetlist("RNN"),
+            tanggal: new Date("2024-02-18T00:15:00+07:00"),
+            remark: "",
+            via: "Showroom bot sharing",
+            harga: 16000
+        },
     ]
 
     return data;
