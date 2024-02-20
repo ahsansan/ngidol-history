@@ -7,13 +7,13 @@ import { useState, useEffect } from 'react';
 export default function HistoryTheater() {
     const [totalAppearances, setTotalAppearances] = useState(0);
     const [totalWins, setTotalWins] = useState(0);
+    const [totalCompledApply, setTotalCompletedApply] = useState(0);
     const [totalWinPercentage, setTotalWinPercentage] = useState(0);
     const [setlist, setSetlist] = useState([]);
     const [setlistData, setSetlistData] = useState([]);
     const [kedatangan, setKedatangan] = useState([]);
 
     useEffect(() => {
-        // Data yang diberikan
         const data = getHistoryTheater()
         const dataHistoryOrder = [...data].sort((a, b) => b.tanggala - a.tanggala);
         setSetlist(dataHistoryOrder)
@@ -21,32 +21,42 @@ export default function HistoryTheater() {
         const setlistStats = {};
         let totalAppearancesCount = 0;
         let totalWinsCount = 0;
+        let totalCompletedApply = 0;
 
         data.forEach(item => {
-        if (!setlistStats[item.setlist]) {
-            setlistStats[item.setlist] = { appearances: 0, wins: 0 };
-        }
-        setlistStats[item.setlist].appearances++;
-        if (item.hasil === 2) {
-            setlistStats[item.setlist].wins++;
-        }
-        totalAppearancesCount++;
-        if (item.hasil === 2) {
-            totalWinsCount++;
-        }
+            if (!setlistStats[item.setlist]) {
+                setlistStats[item.setlist] = { appearances: 0, all: 0, wins: 0 };
+            }
+            setlistStats[item.setlist].appearances++;
+            if (item.hasil === 3 || item.hasil === 2) {
+                setlistStats[item.setlist].all++;
+            }
+            if (item.hasil === 2) {
+                setlistStats[item.setlist].wins++;
+            }
+            totalAppearancesCount++;
+            if (item.hasil === 2 || item.hasil === 3) {
+                totalCompletedApply++;
+            }
+            if (item.hasil === 2) {
+                totalWinsCount++;
+            }
         });
 
         const setlistData = Object.keys(setlistStats).map(setlist => ({
-        setlist,
-        appearances: setlistStats[setlist].appearances,
-        wins: setlistStats[setlist].wins,
-        winPercentage: ((setlistStats[setlist].wins / setlistStats[setlist].appearances) * 100).toFixed(2)
+            setlist,
+            appearances: setlistStats[setlist].appearances,
+            wins: setlistStats[setlist].wins,
+            winPercentage: ((setlistStats[setlist].wins / setlistStats[setlist].all) * 100).toFixed(2)
         }));
 
-        const totalWinPercentageValue = ((totalWinsCount / totalAppearancesCount) * 100).toFixed(2);
+        console.log(setlistData)
+
+        const totalWinPercentageValue = ((totalWinsCount / totalCompletedApply) * 100).toFixed(2);
 
         setSetlistData(setlistData);
         setTotalAppearances(totalAppearancesCount);
+        setTotalCompletedApply(totalCompletedApply);
         setTotalWins(totalWinsCount);
         setTotalWinPercentage(totalWinPercentageValue);
     }, []);
@@ -98,6 +108,7 @@ export default function HistoryTheater() {
                 </div>
                 <div className="bg-white px-6 py-4 border border-[#fdd9e8] mb-1">
                     <p>Total Apply: <span className="font-bold ml-1">{totalAppearances}</span></p>
+                    <p>Menunggu Pengumuman: <span className="font-bold ml-1">{totalAppearances - totalCompledApply}</span></p>
                     <p>Total Kemenangan: <span className="font-bold ml-1">{totalWins}</span></p>
                     <p>Winrate Keseluruhan: <span className="font-bold ml-1">{totalWinPercentage}%</span></p>
                 </div>

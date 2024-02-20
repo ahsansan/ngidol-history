@@ -10,6 +10,27 @@ export function getHistoryTheater() {
             tipe: 1
         },
         {
+            setlist: getSetlist("RKJ"),
+            tanggal: new Date("2024-02-25T00:15:00+07:00"),
+            tanggala: new Date("2024-02-19T00:17:00+07:00"),
+            hasil: 1,
+            tipe: 1
+        },
+        {
+            setlist: getSetlist("RNN"),
+            tanggal: new Date("2024-02-22T00:15:00+07:00"),
+            tanggala: new Date("2024-02-20T00:15:00+07:00"),
+            hasil: 1,
+            tipe: 2
+        },
+        {
+            setlist: getSetlist("RNN"),
+            tanggal: new Date("2024-02-22T00:15:00+07:00"),
+            tanggala: new Date("2024-02-19T00:15:00+07:00"),
+            hasil: 3,
+            tipe: 1
+        },
+        {
             setlist: getSetlist("RNN"),
             tanggal: new Date("2024-02-18T00:15:00+07:00"),
             tanggala: new Date("2024-02-16T00:15:00+07:00"),
