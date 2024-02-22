@@ -20,7 +20,7 @@ export function getHistoryTheater() {
             setlist: getSetlist("RNN"),
             tanggal: new Date("2024-02-22T00:15:00+07:00"),
             tanggala: new Date("2024-02-20T00:15:00+07:00"),
-            hasil: 1,
+            hasil: 3,
             tipe: 2
         },
         {
