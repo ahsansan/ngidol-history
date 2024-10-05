@@ -1,3 +1,4 @@
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   /**
    * Enable static exports for the App Router.
@@ -22,7 +23,6 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  reactStrictMode: true,
 };
 
 export default nextConfig;
